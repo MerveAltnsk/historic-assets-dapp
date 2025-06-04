@@ -1,6 +1,10 @@
-# RWA Investor Frontend
+# 🏛️ HeritageToken Platform
 
-A professional Next.js application for investing in Real World Asset (RWA) tokens on the Stellar blockchain. This platform enables investors to access tokenized real estate, commodities, and other physical assets through compliant blockchain technology.
+> Preserving cultural heritage through blockchain technology - Enabling fractional ownership of historical assets
+
+## 📋 Project Overview
+
+HeritageToken is a revolutionary platform that bridges the gap between cultural heritage preservation and blockchain technology. Our platform enables the tokenization of restoration projects, museum collections, and historical buildings, making cultural heritage preservation accessible to everyone.
 
 ## 🎯 Features
 

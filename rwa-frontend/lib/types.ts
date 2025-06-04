@@ -265,4 +265,23 @@ export interface FinancialsFormData {
   managementFee: string;
   distributionFrequency: 'monthly' | 'quarterly' | 'annually';
   estimatedAppreciation: string;
-} 
+}
+
+export interface HeritageAsset {
+  id: string;
+  name: string;
+  location: string;
+  type: 'restoration_project' | 'museum_collection' | 'historical_building';
+  description: string;
+  totalValue: string;
+  availableTokens: string;
+  pricePerToken: string;
+  projectedYield: string;
+  riskLevel: 'low' | 'medium' | 'high';
+  status: 'live' | 'upcoming' | 'completed';
+  images: string[];
+  launchDate: number;
+  investors: number;
+  contractId?: string;
+  certification: 'UNESCO World Heritage' | 'National Heritage' | 'Museum Certified';
+}

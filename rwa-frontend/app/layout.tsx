@@ -14,8 +14,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "RWA Investor - Real World Asset Platform",
-  description: "Access tokenized real estate, commodities, and other physical assets through compliant blockchain technology on Stellar.",
+  title: "HeritageToken - Cultural Heritage Asset Platform",
+  description: "Tokenization and preservation of restoration projects, museum collections, and historical buildings. Join to support and own a piece of history.",
+  icons: {
+    icon: '/heritage.ico',
+  }
 };
 
 export default function RootLayout({

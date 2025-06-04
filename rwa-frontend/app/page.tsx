@@ -9,13 +9,14 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { 
   Building2, 
-  Coins, 
-  TrendingUp, 
+  Landmark,
+  History,
   Users,
   ArrowRight,
   CheckCircle,
   AlertCircle,
-  Clock
+  Clock,
+  TrendingUp
 } from 'lucide-react';
 import { formatTokenAmount, formatCurrency, formatPercentage } from '@/lib/stellar';
 import Link from 'next/link';
@@ -115,6 +116,63 @@ export default function Dashboard() {
             <p className="text-lg text-muted-foreground">
               Your gateway to tokenized real world assets
             </p>
+          </div>
+
+          {/* Heritage-Themed Metrics */}
+          <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mb-8">
+            <Card>
+              <CardHeader className="flex flex-row items-center justify-between pb-2">
+                <CardTitle className="text-sm font-medium">Heritage Portfolio Value</CardTitle>
+                <Landmark className="h-4 w-4 text-muted-foreground" />
+              </CardHeader>
+              <CardContent>
+                <div className="text-2xl font-bold">{formatCurrency(userBalance || 0)}</div>
+                <p className="text-xs text-muted-foreground">Total value of owned heritage assets</p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader className="flex flex-row items-center justify-between pb-2">
+                <CardTitle className="text-sm font-medium">Total Restoration Funding</CardTitle>
+                <Building2 className="h-4 w-4 text-muted-foreground" />
+              </CardHeader>
+              <CardContent>
+                <div className="text-2xl font-bold">{formatTokenAmount(assetMetadata?.funding || 0)}</div>
+                <p className="text-xs text-muted-foreground">Value contributed to restorations</p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader className="flex flex-row items-center justify-between pb-2">
+                <CardTitle className="text-sm font-medium">Active Heritage Assets</CardTitle>
+                <History className="h-4 w-4 text-muted-foreground" />
+              </CardHeader>
+              <CardContent>
+                <div className="text-2xl font-bold">{assetMetadata?.active_assets || 0}</div>
+                <p className="text-xs text-muted-foreground">Currently active restoration projects</p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader className="flex flex-row items-center justify-between pb-2">
+                <CardTitle className="text-sm font-medium">Preservation Status</CardTitle>
+                <Users className="h-4 w-4 text-muted-foreground" />
+              </CardHeader>
+              <CardContent>
+                <div className="flex items-center space-x-2">
+                  {compliance.status === 'compliant' ? (
+                    <Badge variant="default" className="bg-emerald-500">
+                      <CheckCircle className="h-3 w-3 mr-1" /> Verified
+                    </Badge>
+                  ) : (
+                    <Badge variant="default" className="bg-yellow-500">
+                      <Clock className="h-3 w-3 mr-1" /> Pending
+                    </Badge>
+                  )}
+                </div>
+                <p className="text-xs text-muted-foreground mt-2">Heritage compliance status</p>
+              </CardContent>
+            </Card>
           </div>
 
           {/* Portfolio Overview Stats */}
