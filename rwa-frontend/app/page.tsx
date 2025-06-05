@@ -137,7 +137,7 @@ export default function Dashboard() {
                 <Building2 className="h-4 w-4 text-muted-foreground" />
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold">{formatTokenAmount(assetMetadata?.funding || 0)}</div>
+                <div className="text-2xl font-bold">{formatTokenAmount(assetMetadata?.total_funding || 0)}</div>
                 <p className="text-xs text-muted-foreground">Value contributed to restorations</p>
               </CardContent>
             </Card>
@@ -148,7 +148,7 @@ export default function Dashboard() {
                 <History className="h-4 w-4 text-muted-foreground" />
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold">{assetMetadata?.active_assets || 0}</div>
+                <div className="text-2xl font-bold">{assetMetadata?.activeAssets || 0}</div>
                 <p className="text-xs text-muted-foreground">Currently active restoration projects</p>
               </CardContent>
             </Card>
