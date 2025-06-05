@@ -136,8 +136,7 @@ export default function Dashboard() {
                 <CardTitle className="text-sm font-medium">Total Restoration Funding</CardTitle>
                 <Building2 className="h-4 w-4 text-muted-foreground" />
               </CardHeader>
-              <CardContent>
-                <div className="text-2xl font-bold">{formatTokenAmount(assetMetadata?.total_funding || 0)}</div>
+              <CardContent>                <div className="text-2xl font-bold">{formatTokenAmount(assetMetadata?.valuation || 0)}</div>
                 <p className="text-xs text-muted-foreground">Value contributed to restorations</p>
               </CardContent>
             </Card>
@@ -147,8 +146,7 @@ export default function Dashboard() {
                 <CardTitle className="text-sm font-medium">Active Heritage Assets</CardTitle>
                 <History className="h-4 w-4 text-muted-foreground" />
               </CardHeader>
-              <CardContent>
-                <div className="text-2xl font-bold">{assetMetadata?.activeAssets || 0}</div>
+              <CardContent>                <div className="text-2xl font-bold">{assetMetadata?.symbol ? 1 : 0}</div>
                 <p className="text-xs text-muted-foreground">Currently active restoration projects</p>
               </CardContent>
             </Card>
@@ -159,8 +157,7 @@ export default function Dashboard() {
                 <Users className="h-4 w-4 text-muted-foreground" />
               </CardHeader>
               <CardContent>
-                <div className="flex items-center space-x-2">
-                  {compliance.status === 'compliant' ? (
+                <div className="flex items-center space-x-2">                  {compliance?.kyc_verified ? (
                     <Badge variant="default" className="bg-emerald-500">
                       <CheckCircle className="h-3 w-3 mr-1" /> Verified
                     </Badge>
